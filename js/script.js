@@ -5,16 +5,16 @@ function generate_cell(number) {
 	return cell
 }
 
-function generate_bombs(min, max) {
-	for(let i = min; i < max; min++) {
-		Math.floor(Math.random() * 16 );
+// function generate_bombs(min, max) {
+// 	for(let i = min; i < max; min++) {
+// 		Math.floor(Math.random() * 16 );
 
-		let min
-		let max
-		let bombs = i
-		
-	}
-}
+// 		// let min
+// 		// let max
+// 		// let bombs = i
+// 		// console.log(bombs)
+// 	}
+// }
 
 let bombs = generate_bombs(1, 100);
 
