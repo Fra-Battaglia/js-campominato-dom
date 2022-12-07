@@ -5,6 +5,17 @@ function generate_cell(number) {
 	return cell
 }
 
+function generate_bombs(min, max) {
+	for(let i = min; i < max; min++) {
+		Math.floor(Math.random() * 16 );
+
+		let bombs = i
+		console.log(bombs)
+	}
+}
+
+let bombs = generate_bombs(1, 100);
+
 let generate_grid = document.getElementById('grid-generator');
 generate_grid.addEventListener('click', function() {
 	for (let i = 1; i <= 100; i++) {
