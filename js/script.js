@@ -9,8 +9,10 @@ function generate_bombs(min, max) {
 	for(let i = min; i < max; min++) {
 		Math.floor(Math.random() * 16 );
 
+		let min
+		let max
 		let bombs = i
-		console.log(bombs)
+		
 	}
 }
 
