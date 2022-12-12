@@ -5,18 +5,33 @@ function generate_cell(number) {
 	return cell
 }
 
-// function generate_bombs(min, max) {
-// 	for(let i = min; i < max; min++) {
-// 		Math.floor(Math.random() * 16 );
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+  }
 
-// 		// let min
-// 		// let max
-// 		// let bombs = i
-// 		// console.log(bombs)
-// 	}
-// }
+function generate_bombs (min, max) {
+	min = 1;
+	max= 100;
 
-let bombs = generate_bombs(1, 100);
+	const bombsArray = [];
+	i = 0
+	while (i < 16) {
+		let bomb = getRandomInt (100)
+
+		if ( ! bombsArray.includes(bomb)) {
+			bombsArray.push(bomb)
+
+			i++
+		}
+		
+	}
+	return bombsArray
+}
+
+let bombs = generate_bombs (100);
+
+console.log(bombs);
+
 
 let generate_grid = document.getElementById('grid-generator');
 generate_grid.addEventListener('click', function() {
@@ -24,10 +39,18 @@ generate_grid.addEventListener('click', function() {
 		let grid = document.getElementById('container-grid');
 		let grid_cell = generate_cell(i);
 		grid.append(grid_cell);
-
+		
 		grid_cell.addEventListener('click', function(){
 			console.log(this.innerText);
-			this.classList.toggle('clicked')
+
+			if (bombs.includes(parseInt(this.innerText))) {
+				this.classList.add('bomb');
+				alert('hai cliccato una bomba');
+			}
+
+			else {
+				this.classList.add('clicked');
+			}
 		})
 	}
 });
